@@ -1,0 +1,39 @@
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/007166.jpg 64,130,287,393,0 2,91,333,341,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/008849.jpg 141,139,340,375,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/003986.jpg 44,57,311,330,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002359.jpg 12,114,351,375,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/003443.jpg 59,96,229,233,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/006321.jpg 54,200,232,412,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/001759.jpg 2,153,197,375,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/006042.jpg 205,102,318,213,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002277.jpg 1,60,297,500,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/008346.jpg 28,99,210,487,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/006602.jpg 92,121,205,237,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/005231.jpg 215,109,386,272,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/001643.jpg 1,42,472,323,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002732.jpg 81,4,325,242,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/000063.jpg 123,115,379,275,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/000246.jpg 60,44,331,310,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/003508.jpg 1,157,269,500,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/001406.jpg 109,127,404,373,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/000958.jpg 1,90,327,299,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/009619.jpg 210,137,306,251,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/001151.jpg 93,109,316,325,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/005601.jpg 2,161,427,382,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/004327.jpg 12,66,493,415,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/001594.jpg 253,177,302,238,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/008822.jpg 1,12,393,333,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/004777.jpg 178,101,437,360,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/006385.jpg 219,158,295,325,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/007433.jpg 179,53,474,375,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/006829.jpg 1,65,424,375,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/003632.jpg 76,73,500,368,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/005668.jpg 2,131,185,373,0 167,117,338,373,0 293,112,500,324,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002146.jpg 25,62,343,493,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002199.jpg 69,163,477,372,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/007089.jpg 43,46,468,270,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/007212.jpg 143,9,445,331,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/002697.jpg 25,26,216,498,0 199,42,422,404,0 241,375,480,498,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/007687.jpg 280,25,500,345,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/004409.jpg 1,1,361,275,0
+/home/zya/zya/AI/NNet/detection/class_01_mobilenet_ssd/test1_from_bubbliiing/VOCdevkit/VOC2007/JPEGImages/009713.jpg 114,57,406,344,0
