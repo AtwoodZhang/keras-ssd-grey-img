@@ -32,7 +32,7 @@ def train(loader, model, criterion, optimizer, epoch, device, debug_step=100):
     
 
 def main():
-    logging.basicConfig(filename="train.log", level=logging.INFO)  # log to file
+    logging.basicConfig(filename="./train.log", level=logging.INFO)  # log to file
     logging.getLogger().addHandler(logging.StreamHandler())  # also print to console output
     args = get_args()
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() and args.use_cuda else "cpu")
@@ -73,13 +73,24 @@ def main():
     model = SampleModel(
         num_classes = args.num_classes,
         input_size = (args.height, args.width),
-        quantize = True,
+        quantize = False,
         mode = 'train',
     )
     model.init()
+    model = prepare_model(model)  # add quantization
+    logging.info("Model created")
+    if args.use_cuda and torch.cuda.is_available():
+        model = torch.nn.DataParallel(model, device_ids = [DEVICE])
+        model.to(DEVICE)
     
+    # Loss function
+    criterion = torch.nn.CrossEntropyLoss()
+    if args.use_cuda and torch.cuda.is_available():
+        criterion = criterion.cuda()
+    optimizer = torch.optim.SGD(model.parameters(), lr=args.learning_rate, momentum=args.momentum)
     
-    
+    for epoch in range(args.num_epochs):
+        train_loss = train(train_loader, model, criterion, optimizer, epoch, DEVICE)
     
 if __name__ == "__main__":
     main()
