@@ -85,7 +85,7 @@ def val(loader, model, criterion, device):
     return val_loss, val_acc
 
 def main():
-    logging.basicConfig(filename='./output/pytorch/demo/quantize_train.log', level=logging.INFO) # log to file
+    logging.basicConfig(filename='/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/output/pytorch/demo/quantize_train.log', level=logging.INFO) # log to file
     logging.getLogger().addHandler(logging.StreamHandler()) # also print to console output
     args = get_args()
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() and args.use_cuda else "cpu")

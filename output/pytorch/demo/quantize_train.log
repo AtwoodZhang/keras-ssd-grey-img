@@ -19,3 +19,5 @@ INFO:root:Epoch: 0, Training Loss: 1.5268, Validation Loss: 1.5955, Validation A
 INFO:root:Converting the model (post-training)...
 INFO:root:Quantization done.
 INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/model_quantized.pth
+INFO:root:2023-08-01 12:33:02
+INFO:root:Model created

@@ -54,7 +54,7 @@ def prepare_model(model):
         if isinstance(m, torch.nn.Linear):
             m.qconfig = quant_config_per_tensor()
     # fuse conv/bn/relu together
-    model = torch.quantization.fuse_modules(model, model.layers_to_fuse)
+    model = torch.ao.quantization.fuse_modules_qat(model, model.layers_to_fuse)
     # convert fp32 model to quantize-aware training model
     model = torch.quantization.prepare_qat(model)
     return model

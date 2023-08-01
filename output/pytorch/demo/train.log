@@ -18,3 +18,4 @@ INFO:root:Epoch: 0,Training Loss:  1.4734, Validation Loss: 1.4202, Validation A
 INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/model.pkl
 INFO:root:2023-08-01 12:28:21
 INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2909
