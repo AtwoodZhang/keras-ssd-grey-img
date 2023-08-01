@@ -1,0 +1,21 @@
+INFO:root:2023-08-01 10:36:20
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2756
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.0814
+INFO:root:Epoch: 0, Step: 300, Average Loss: 1.9424
+INFO:root:Epoch: 0, Step: 400, Average Loss: 1.8671
+INFO:root:Epoch: 0, Step: 500, Average Loss: 1.8024
+INFO:root:Epoch: 0, Step: 600, Average Loss: 1.7582
+INFO:root:Epoch: 0, Step: 700, Average Loss: 1.7503
+INFO:root:Epoch: 0, Step: 800, Average Loss: 1.6998
+INFO:root:Epoch: 0, Step: 900, Average Loss: 1.6715
+INFO:root:Epoch: 0, Step: 1000, Average Loss: 1.6539
+INFO:root:Epoch: 0, Step: 1100, Average Loss: 1.6358
+INFO:root:Epoch: 0, Step: 1200, Average Loss: 1.6125
+INFO:root:Epoch: 0, Step: 1300, Average Loss: 1.6214
+INFO:root:Epoch: 0, Step: 1400, Average Loss: 1.5537
+INFO:root:Epoch: 0, Step: 1500, Average Loss: 1.5268
+INFO:root:Epoch: 0, Training Loss: 1.5268, Validation Loss: 1.5955, Validation Acc: 0.4238
+INFO:root:Converting the model (post-training)...
+INFO:root:Quantization done.
+INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/model_quantized.pth

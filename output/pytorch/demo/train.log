@@ -1,0 +1,20 @@
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2743
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.0510
+INFO:root:Epoch: 0, Step: 300, Average Loss: 1.9037
+INFO:root:Epoch: 0, Step: 400, Average Loss: 1.7894
+INFO:root:Epoch: 0, Step: 500, Average Loss: 1.7581
+INFO:root:Epoch: 0, Step: 600, Average Loss: 1.6955
+INFO:root:Epoch: 0, Step: 700, Average Loss: 1.6670
+INFO:root:Epoch: 0, Step: 800, Average Loss: 1.6221
+INFO:root:Epoch: 0, Step: 900, Average Loss: 1.6189
+INFO:root:Epoch: 0, Step: 1000, Average Loss: 1.5588
+INFO:root:Epoch: 0, Step: 1100, Average Loss: 1.5227
+INFO:root:Epoch: 0, Step: 1200, Average Loss: 1.5334
+INFO:root:Epoch: 0, Step: 1300, Average Loss: 1.4726
+INFO:root:Epoch: 0, Step: 1400, Average Loss: 1.5279
+INFO:root:Epoch: 0, Step: 1500, Average Loss: 1.4734
+INFO:root:Epoch: 0,Training Loss:  1.4734, Validation Loss: 1.4202, Validation Acc: 0.4924
+INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/model.pkl
+INFO:root:2023-08-01 12:28:21
+INFO:root:Model created

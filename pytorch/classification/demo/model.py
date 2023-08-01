@@ -27,7 +27,7 @@ def dw_bn_relu(in_channels, channel_multiplier=1, kernel_size=3, stride=1, paddi
     ]))
 
 
-def _xavier_init_(m: nn.Module):
+def _xavier_init_(m: nn.Module):  # initial the weights of model.
     if isinstance(m, nn.Conv2d):
         nn.init.xavier_uniform_(m.weight)
         
