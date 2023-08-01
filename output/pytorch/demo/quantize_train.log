@@ -82,3 +82,4 @@ INFO:root:Epoch: 3, Step: 1000, Average Loss: 1.1517
 INFO:root:Epoch: 3, Step: 1100, Average Loss: 1.1643
 INFO:root:Epoch: 3, Step: 1200, Average Loss: 1.1887
 INFO:root:Epoch: 3, Step: 1300, Average Loss: 1.1695
+INFO:root:Epoch: 3, Step: 1400, Average Loss: 1.1417
