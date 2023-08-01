@@ -21,3 +21,64 @@ INFO:root:Quantization done.
 INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/model_quantized.pth
 INFO:root:2023-08-01 12:33:02
 INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2936
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.1719
+INFO:root:Epoch: 0, Step: 300, Average Loss: 2.0249
+INFO:root:Epoch: 0, Step: 400, Average Loss: 1.8919
+INFO:root:Epoch: 0, Step: 500, Average Loss: 1.8521
+INFO:root:Epoch: 0, Step: 600, Average Loss: 1.7441
+INFO:root:Epoch: 0, Step: 700, Average Loss: 1.7593
+INFO:root:Epoch: 0, Step: 800, Average Loss: 1.7210
+INFO:root:Epoch: 0, Step: 900, Average Loss: 1.6604
+INFO:root:Epoch: 0, Step: 1000, Average Loss: 1.6318
+INFO:root:Epoch: 0, Step: 1100, Average Loss: 1.6333
+INFO:root:Epoch: 0, Step: 1200, Average Loss: 1.6069
+INFO:root:Epoch: 0, Step: 1300, Average Loss: 1.6773
+INFO:root:Epoch: 0, Step: 1400, Average Loss: 1.5883
+INFO:root:Epoch: 0, Step: 1500, Average Loss: 1.5416
+INFO:root:Epoch: 0, Training Loss: 1.5416, Validation Loss: 1.6637, Validation Acc: 0.4087
+INFO:root:Epoch: 1, Step: 100, Average Loss: 1.5235
+INFO:root:Epoch: 1, Step: 200, Average Loss: 1.4971
+INFO:root:Epoch: 1, Step: 300, Average Loss: 1.4661
+INFO:root:Epoch: 1, Step: 400, Average Loss: 1.4819
+INFO:root:Epoch: 1, Step: 500, Average Loss: 1.4547
+INFO:root:Epoch: 1, Step: 600, Average Loss: 1.4321
+INFO:root:Epoch: 1, Step: 700, Average Loss: 1.4324
+INFO:root:Epoch: 1, Step: 800, Average Loss: 1.4098
+INFO:root:Epoch: 1, Step: 900, Average Loss: 1.3724
+INFO:root:Epoch: 1, Step: 1000, Average Loss: 1.3653
+INFO:root:Epoch: 1, Step: 1100, Average Loss: 1.3729
+INFO:root:Epoch: 1, Step: 1200, Average Loss: 1.3859
+INFO:root:Epoch: 1, Step: 1300, Average Loss: 1.3628
+INFO:root:Epoch: 1, Step: 1400, Average Loss: 1.3419
+INFO:root:Epoch: 1, Step: 1500, Average Loss: 1.3616
+INFO:root:Epoch: 1, Training Loss: 1.3616, Validation Loss: 1.3049, Validation Acc: 0.5386
+INFO:root:Epoch: 2, Step: 100, Average Loss: 1.3101
+INFO:root:Epoch: 2, Step: 200, Average Loss: 1.3366
+INFO:root:Epoch: 2, Step: 300, Average Loss: 1.3113
+INFO:root:Epoch: 2, Step: 400, Average Loss: 1.2905
+INFO:root:Epoch: 2, Step: 500, Average Loss: 1.2869
+INFO:root:Epoch: 2, Step: 600, Average Loss: 1.2785
+INFO:root:Epoch: 2, Step: 700, Average Loss: 1.2672
+INFO:root:Epoch: 2, Step: 800, Average Loss: 1.2497
+INFO:root:Epoch: 2, Step: 900, Average Loss: 1.2414
+INFO:root:Epoch: 2, Step: 1000, Average Loss: 1.2643
+INFO:root:Epoch: 2, Step: 1100, Average Loss: 1.2444
+INFO:root:Epoch: 2, Step: 1200, Average Loss: 1.2690
+INFO:root:Epoch: 2, Step: 1300, Average Loss: 1.2563
+INFO:root:Epoch: 2, Step: 1400, Average Loss: 1.2535
+INFO:root:Epoch: 2, Step: 1500, Average Loss: 1.2103
+INFO:root:Epoch: 2, Training Loss: 1.2103, Validation Loss: 1.3436, Validation Acc: 0.5244
+INFO:root:Epoch: 3, Step: 100, Average Loss: 1.2120
+INFO:root:Epoch: 3, Step: 200, Average Loss: 1.2148
+INFO:root:Epoch: 3, Step: 300, Average Loss: 1.2236
+INFO:root:Epoch: 3, Step: 400, Average Loss: 1.1978
+INFO:root:Epoch: 3, Step: 500, Average Loss: 1.1971
+INFO:root:Epoch: 3, Step: 600, Average Loss: 1.1841
+INFO:root:Epoch: 3, Step: 700, Average Loss: 1.2102
+INFO:root:Epoch: 3, Step: 800, Average Loss: 1.1881
+INFO:root:Epoch: 3, Step: 900, Average Loss: 1.1880
+INFO:root:Epoch: 3, Step: 1000, Average Loss: 1.1517
+INFO:root:Epoch: 3, Step: 1100, Average Loss: 1.1643
+INFO:root:Epoch: 3, Step: 1200, Average Loss: 1.1887
+INFO:root:Epoch: 3, Step: 1300, Average Loss: 1.1695
