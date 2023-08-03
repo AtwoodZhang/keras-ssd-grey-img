@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./keras/classification/')
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 不显示等级2以下的提示信息；
 import zipfile
@@ -6,13 +8,24 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
+from Models import Sample_model
+from Models import model_version1
 
 
-
-def cls_model_v0(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/", 
-                 epoch=100, 
-                 save_model_name = 'class_08_test_model_2_less.h5' ):
-    
+def cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/", 
+                    epoch=100, 
+                    save_model_name = 'class_08_test_model_2_less.h5',
+                    model_summary="True",
+                    weights = None,
+                    model_load = 2):
+    if model_load == 1:
+        model = model_version1()
+    elif model_load == 2:
+        model = Sample_model(model_summary=model_summary)
+        
+    if weights is not None:
+        model.load_weights(weights)
+        
     train_data_path = data_path + "train"
     test_data_path = data_path + "val"
         
@@ -50,42 +63,20 @@ def cls_model_v0(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSec
         color_mode="grayscale",
         class_mode='categorical'
     )
-
-
-    """step2. build the model
-    """
-    #======== 模型构建 =========
-    model = tf.keras.models.Sequential([
-        # model 1
-        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu', input_shape = (120, 160, 1)), # 输入参数：过滤器数量，过滤器尺寸，激活函数：relu， 输入图像尺寸
-        tf.keras.layers.MaxPooling2D(2, 2), # 池化：增强特征
-        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu'), # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        tf.keras.layers.MaxPooling2D(2, 2),
-        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu'), # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        tf.keras.layers.MaxPooling2D(2, 2),
-        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu'), # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        tf.keras.layers.MaxPooling2D(2, 2),
-        # tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu'), # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        # tf.keras.layers.MaxPooling2D(2, 2),
-        tf.keras.layers.Conv2D(64, (3, 3), activation = 'relu'), # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        # tf.keras.layers.MaxPooling2D(2, 2),
-        tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),  # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        # tf.keras.layers.MaxPooling2D(2, 2),
-        # tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),  # 输入参数：过滤器数量、过滤器尺寸、激活函数：relu
-        # tf.keras.layers.MaxPooling2D(2, 2),
-        tf.keras.layers.Flatten(), # 输入层
-        # tf.keras.layers.Dense(1, activation = 'relu'), # 全连接隐层 神经元数量：128 ，激活函数：relu
-        tf.keras.layers.Dense(3, activation = 'softmax') # 英文字母分类 26 ，阿拉伯数字分类 10  输出用的是softmax 概率化函数 使得所有输出加起来为1 0-1之间
-    ])
-
-    model.summary()
-
+    
     #======== 模型参数编译 =========
+    from keras import optimizers
+    sgd = optimizers.SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(
-        optimizer = 'rmsprop',
-        loss = 'categorical_crossentropy', # 损失函数： 稀疏的交叉熵 binary_crossentropy
+        optimizer = sgd,
+        loss = 'binary_crossentropy',
         metrics = ['accuracy']
     )
+    # model.compile(
+    #     optimizer = 'rmsprop',
+    #     loss = 'categorical_crossentropy', # 损失函数： 稀疏的交叉熵 binary_crossentropy
+    #     metrics = ['accuracy']
+    # )
     
     #======== 模型训练 =========
     # Note that this may take some time.
@@ -98,3 +89,12 @@ def cls_model_v0(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSec
     model.save(save_model_name) # model 保存
 
     return history
+    
+    
+
+if __name__ == "__main__":
+    from log_visualization_tool import visual_train
+    history = cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/", 
+                            epoch=100, 
+                            save_model_name = './../../output/keras/cls/model_v0_m1.h5' )
+    visual_train(history)
