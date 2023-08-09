@@ -1,7 +1,9 @@
 import numpy as np
+# import tensorflow as tf
+# import keras.backend as K
+import tensorflow.compat.v1.keras.backend as K
 import tensorflow as tf
-import keras.backend as K
-
+tf.compat.v1.disable_eager_execution()
 
 class BBoxUtility(object):
     def __init__(self, num_classes, nms_thresh=0.45, top_k=300):

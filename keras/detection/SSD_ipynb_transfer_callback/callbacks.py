@@ -156,10 +156,6 @@ class EvalCallback(keras.callbacks.Callback):
 
         self.maps = [0]
         self.epoches = [0]
-        if self.eval_flag:
-            with open(os.path.join(self.log_dir, "epoch_map.txt"), 'a') as f:
-                f.write(str(0))
-                f.write("\n")
 
     def get_map_txt(self, image_id, image, class_names, map_out_path):
         f = open(os.path.join(map_out_path, "detection-results/" + image_id + ".txt"), "w")
@@ -262,6 +258,14 @@ class EvalCallback(keras.callbacks.Callback):
             self.maps.append(temp_map)
             self.epoches.append(temp_epoch)
 
+            
+            file_path = self.log_dir
+            if not os.path.exists(file_path):
+                os.makedirs(file_path)
+                print(f"Path '{file_path}' created successfully.")
+            else:
+                print(f"Path '{file_path}' already exists.")
+                
             with open(os.path.join(self.log_dir, "epoch_map.txt"), 'a') as f:
                 f.write(str(temp_map))
                 f.write("\n")

@@ -415,6 +415,17 @@ def get_map(MINOVERLAP, draw_plot, score_threhold=0.5, path = './map_out'):
     sum_AP = 0.0
     ap_dictionary = {}
     lamr_dictionary = {}
+    tmp_path = RESULTS_FILES_PATH
+    
+    # 检查路径是否存在
+    if not os.path.exists(tmp_path):
+    # 创建路径
+        os.makedirs(tmp_path)
+        print(f"Path '{tmp_path}' created successfully.")
+    else:
+        print(f"Path '{tmp_path}' already exists.")
+        
+        
     with open(RESULTS_FILES_PATH + "/results.txt", 'w') as results_file:
         results_file.write("# AP and precision/recall per class\n")
         count_true_positives = {}
