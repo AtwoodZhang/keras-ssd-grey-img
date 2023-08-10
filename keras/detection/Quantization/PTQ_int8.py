@@ -33,7 +33,7 @@ for i in list_dir:
 input_data = all_img
 input_data = np.array(input_data)
 input_data = np.expand_dims(input_data, axis=-1)
-input_data = input_data.astype(np.float32)# / 127.5 - 1.0
+input_data = input_data.astype(np.float32) / 127.5 - 1.0  # 这里是否需要 归一化到(-1,1)
 print("test dataset size: ", np.shape(input_data))
 
 #    校准模型，使用校准数据来估计量化参数
