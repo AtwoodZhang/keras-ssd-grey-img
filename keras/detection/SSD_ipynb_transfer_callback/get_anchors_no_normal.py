@@ -16,9 +16,9 @@ anchors[:, ::2] *= img_width
 anchors[:, 1::2] *= img_height
 xywh_anchors = copy.deepcopy(anchors)
 
-# 将x, y交换，按照681要求，改为：y, x, w, h
-xywh_anchors[:, 3::4] = anchors[:, 3::4] - anchors[:, 1::4]  # box_height
-xywh_anchors[:, 2::4] = anchors[:, 2::4] - anchors[:, ::4]  # box_width
+# 将x, y交换，按照681要求，改为：y, x, h, w
+xywh_anchors[:, 2::4] = anchors[:, 3::4] - anchors[:, 1::4]  # box_height
+xywh_anchors[:, 3::4] = anchors[:, 2::4] - anchors[:, ::4]  # box_width
 xywh_anchors[:, 0::4] = anchors[:, 1::4] + (0.5*xywh_anchors[:, 3::4])
 xywh_anchors[:, 1::4] = anchors[:, ::4] + (0.5*xywh_anchors[:, 2::4])
 
@@ -32,7 +32,7 @@ pprint(rounded_anchors)
 anchors_txt_path = "./anchors.txt"
 with open(anchors_txt_path, 'w') as f:
     for r in rounded_anchors:
-        row_str = ','.join(map(str, r))
-        f.write(row_str + '\n')
+        row_str = ', '.join(map(str, r))
+        f.write("  " + row_str + ',\n')
 print("write to: " + anchors_txt_path + "  finish")
 

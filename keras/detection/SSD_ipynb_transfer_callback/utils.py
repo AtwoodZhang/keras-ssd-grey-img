@@ -37,23 +37,26 @@ def show_config(**kwargs):
     
 
 def visual_train(history):
-    acc = history.history['accuracy']
-    val_acc = history.history['val_accuracy']
-    loss = history.history['loss']
-    val_loss = history.history['val_loss']
-    
-    epochs = range(len(acc)) # Get number of epochs
-    
-    #-----------------------------------------------------------
-    # Plot training and validation accuracy per epoch
-    #-----------------------------------------------------------
-    plt.plot(epochs, acc, 'r', label = "tra_acc")
-    plt.plot(epochs ,val_acc, 'b', label = "val_acc")
-    plt.title("training and validation accuracy")
-    plt.legend(loc=0)
-    plt.grid(ls='--')  # 生成网格
-    plt.show()
-    # 曲线呈直线是因为epochs/轮次太少
+    try:
+        acc = history['accuracy']
+        val_acc = history['val_accuracy']
+        #-----------------------------------------------------------
+        # Plot training and validation accuracy per epoch
+        #-----------------------------------------------------------
+        epochs = range(len(acc)) # Get number of epochs
+        plt.plot(epochs, acc, 'r', label = "tra_acc")
+        plt.plot(epochs ,val_acc, 'b', label = "val_acc")
+        plt.title("training and validation accuracy")
+        plt.legend(loc=0)
+        plt.grid(ls='--')  # 生成网格
+        plt.show()
+        # 曲线呈直线是因为epochs/轮次太少
+    except Exception as e:
+        print("no accuracy, only loss.")
+        
+    loss = history['loss']
+    val_loss = history['val_loss']
+    epochs = range(len(loss)) # Get number of epochs
     #-----------------------------------------------------------
     # Plot training and validation loss per epoch
     #-----------------------------------------------------------
