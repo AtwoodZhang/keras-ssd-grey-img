@@ -7,9 +7,10 @@ from keras.models import load_model
 
 
 
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230819/good_detection_test_callback_2.h5"
+# imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good_enlarge/VOCdevkit/VOC2007/JPEGImages/"
 h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
 imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
-
 
 # 设置转换项： 配置转换选项，包括输入数据的数据类型(例如float32和uint8)和优化选项。在这里，需要将激活和权重量化为int8
 keras_model = load_model(h5_model_path, custom_objects={"compute_loss":None})
@@ -46,6 +47,6 @@ converter.representative_dataset = representative_data_gen
 # 2. 将模型转换为TFLite模型，执行转换操作，并将量化的TFLite模型保存为文件；
 tflite_model = converter.convert()
 #    保存为TFLite文件
-with open('quantized_model.tflite', 'wb') as f:
+with open('quantized_model_0818.tflite', 'wb') as f:
     f.write(tflite_model)
-    print("has been written to: quantized_model.tflite")
+    print("has been written to: quantized_model_0818.tflite")

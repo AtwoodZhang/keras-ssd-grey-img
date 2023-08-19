@@ -95,3 +95,104 @@ INFO:root:Epoch: 4, Step: 1000, Average Loss: 1.1141
 INFO:root:Epoch: 4, Step: 1100, Average Loss: 1.1133
 INFO:root:Epoch: 4, Step: 1200, Average Loss: 1.1136
 INFO:root:Epoch: 4, Step: 1300, Average Loss: 1.1024
+INFO:root:2023-08-17 02:15:00
+INFO:root:Model created
+INFO:root:2023-08-17 02:17:21
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2335
+INFO:root:2023-08-17 02:30:42
+INFO:root:Model created
+INFO:root:2023-08-17 02:31:15
+INFO:root:Model created
+INFO:root:2023-08-17 02:32:53
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2148
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.0261
+INFO:root:2023-08-17 02:45:51
+INFO:root:Model created
+INFO:root:2023-08-17 02:46:38
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.2905
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.1418
+INFO:root:Epoch: 0, Step: 300, Average Loss: 2.0238
+INFO:root:Epoch: 0, Step: 400, Average Loss: 1.9144
+INFO:root:Epoch: 0, Step: 500, Average Loss: 1.8365
+INFO:root:Epoch: 0, Step: 600, Average Loss: 1.7566
+INFO:root:Epoch: 0, Step: 700, Average Loss: 1.7211
+INFO:root:Epoch: 0, Step: 800, Average Loss: 1.7485
+INFO:root:Epoch: 0, Step: 900, Average Loss: 1.6991
+INFO:root:Epoch: 0, Step: 1000, Average Loss: 1.6914
+INFO:root:Epoch: 0, Step: 1100, Average Loss: 1.6289
+INFO:root:Epoch: 0, Step: 1200, Average Loss: 1.6230
+INFO:root:Epoch: 0, Step: 1300, Average Loss: 1.5752
+INFO:root:Epoch: 0, Step: 1400, Average Loss: 1.5914
+INFO:root:Epoch: 0, Step: 1500, Average Loss: 1.5713
+INFO:root:Epoch: 0,Training Loss:  1.5713, Validation Loss: 1.5301, Validation Acc: 0.4463time cost: 3577.7480
+INFO:root:Epoch: 1, Step: 100, Average Loss: 1.5174
+INFO:root:Epoch: 1, Step: 200, Average Loss: 1.5016
+INFO:root:Epoch: 1, Step: 300, Average Loss: 1.5002
+INFO:root:Epoch: 1, Step: 400, Average Loss: 1.4730
+INFO:root:Epoch: 1, Step: 500, Average Loss: 1.4678
+INFO:root:Epoch: 1, Step: 600, Average Loss: 1.4522
+INFO:root:Epoch: 1, Step: 700, Average Loss: 1.4394
+INFO:root:Epoch: 1, Step: 800, Average Loss: 1.4212
+INFO:root:Epoch: 1, Step: 900, Average Loss: 1.4044
+INFO:root:Epoch: 1, Step: 1000, Average Loss: 1.4131
+INFO:root:Epoch: 1, Step: 1100, Average Loss: 1.3413
+INFO:root:Epoch: 1, Step: 1200, Average Loss: 1.3589
+INFO:root:Epoch: 1, Step: 1300, Average Loss: 1.3499
+INFO:root:Epoch: 1, Step: 1400, Average Loss: 1.3655
+INFO:root:Epoch: 1, Step: 1500, Average Loss: 1.3026
+INFO:root:Epoch: 1,Training Loss:  1.3026, Validation Loss: 1.2881, Validation Acc: 0.5505time cost: 3598.3578
+INFO:root:Epoch: 2, Step: 100, Average Loss: 1.3337
+INFO:root:Epoch: 2, Step: 200, Average Loss: 1.2840
+INFO:root:Epoch: 2, Step: 300, Average Loss: 1.2987
+INFO:root:Epoch: 2, Step: 400, Average Loss: 1.3203
+INFO:root:Epoch: 2, Step: 500, Average Loss: 1.2638
+INFO:root:Epoch: 2, Step: 600, Average Loss: 1.2742
+INFO:root:Epoch: 2, Step: 700, Average Loss: 1.2273
+INFO:root:Epoch: 2, Step: 800, Average Loss: 1.2520
+INFO:root:Epoch: 2, Step: 900, Average Loss: 1.2456
+INFO:root:Epoch: 2, Step: 1000, Average Loss: 1.2383
+INFO:root:Epoch: 2, Step: 1100, Average Loss: 1.2483
+INFO:root:Epoch: 2, Step: 1200, Average Loss: 1.2232
+INFO:root:Epoch: 2, Step: 1300, Average Loss: 1.2260
+INFO:root:Epoch: 2, Step: 1400, Average Loss: 1.1987
+INFO:root:Epoch: 2, Step: 1500, Average Loss: 1.1928
+INFO:root:Epoch: 2,Training Loss:  1.1928, Validation Loss: 1.2534, Validation Acc: 0.5540time cost: 3597.2570
+INFO:root:Epoch: 3, Step: 100, Average Loss: 1.1944
+INFO:root:Epoch: 3, Step: 200, Average Loss: 1.1799
+INFO:root:Epoch: 3, Step: 300, Average Loss: 1.2253
+INFO:root:Epoch: 3, Step: 400, Average Loss: 1.1618
+INFO:root:Epoch: 3, Step: 500, Average Loss: 1.1739
+INFO:root:Epoch: 3, Step: 600, Average Loss: 1.1712
+INFO:root:Epoch: 3, Step: 700, Average Loss: 1.2065
+INFO:root:Epoch: 3, Step: 800, Average Loss: 1.1835
+INFO:root:Epoch: 3, Step: 900, Average Loss: 1.1599
+INFO:root:Epoch: 3, Step: 1000, Average Loss: 1.1240
+INFO:root:Epoch: 3, Step: 1100, Average Loss: 1.1354
+INFO:root:Epoch: 3, Step: 1200, Average Loss: 1.1741
+INFO:root:Epoch: 3, Step: 1300, Average Loss: 1.1542
+INFO:root:Epoch: 3, Step: 1400, Average Loss: 1.1120
+INFO:root:Epoch: 3, Step: 1500, Average Loss: 1.1614
+INFO:root:Epoch: 3,Training Loss:  1.1614, Validation Loss: 1.1547, Validation Acc: 0.5955time cost: 3614.3093
+INFO:root:Epoch: 4, Step: 100, Average Loss: 1.1370
+INFO:root:Epoch: 4, Step: 200, Average Loss: 1.0884
+INFO:root:2023-08-17 06:57:44
+INFO:root:Model created
+INFO:root:Epoch: 0, Step: 100, Average Loss: 2.3065
+INFO:root:Epoch: 0, Step: 200, Average Loss: 2.1400
+INFO:root:Epoch: 0, Step: 300, Average Loss: 2.0041
+INFO:root:Epoch: 0, Step: 400, Average Loss: 1.8629
+INFO:root:Epoch: 0, Step: 500, Average Loss: 1.7773
+INFO:root:Epoch: 0, Step: 600, Average Loss: 1.7539
+INFO:root:Epoch: 0, Step: 700, Average Loss: 1.7566
+INFO:root:Epoch: 0, Step: 800, Average Loss: 1.7004
+INFO:root:Epoch: 0, Step: 900, Average Loss: 1.6379
+INFO:root:Epoch: 0, Step: 1000, Average Loss: 1.6096
+INFO:root:Epoch: 0, Step: 1100, Average Loss: 1.6059
+INFO:root:Epoch: 0, Step: 1200, Average Loss: 1.6003
+INFO:root:Epoch: 0, Step: 1300, Average Loss: 1.5832
+INFO:root:Epoch: 0, Step: 1400, Average Loss: 1.5633
+INFO:root:Epoch: 0, Step: 1500, Average Loss: 1.5094
+INFO:root:Epoch: 0,Training Loss:  1.5094, Validation Loss: 1.5244, Validation Acc: 0.4442

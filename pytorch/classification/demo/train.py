@@ -147,7 +147,7 @@ def main():
     """
     save model
     """
-    save_path = os.path.join(os.getcwd(), "./output/pytorch/demo/model.pkl")
+    save_path = os.path.join(os.getcwd(), "./output/pytorch/demo/model_0816.pkl")
     torch.save(model_cpu.state_dict(), save_path)
     logging.info("Model saved to {}".format(save_path))
     

@@ -1,0 +1,19 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Sat 2023-06-17 01:28:00 CST; 2 months 1 days ago
+     Docs: https://docs.docker.com
+ Main PID: 2546 (dockerd)
+    Tasks: 23
+   CGroup: /system.slice/docker.service
+           └─2546 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+6月 17 01:27:59 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:27:59.895613698+08:00" level=info msg="Loading containers: start."
+6月 17 01:27:59 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:27:59.987651390+08:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+6月 17 01:28:00 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:28:00.015548649+08:00" level=info msg="Loading containers: done."
+6月 17 01:28:00 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:28:00.050635019+08:00" level=info msg="Docker daemon" commit="20.10.21-0ubuntu1~18.04.3" graphdriver(s)=overlay2 version=20.10.21
+6月 17 01:28:00 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:28:00.050821437+08:00" level=info msg="Daemon has completed initialization"
+6月 17 01:28:00 SSSLXSRVLS001 systemd[1]: Started Docker Application Container Engine.
+6月 17 01:28:00 SSSLXSRVLS001 dockerd[2546]: time="2023-06-17T01:28:00.066806502+08:00" level=info msg="API listen on /var/run/docker.sock"
+8月 18 07:23:15 SSSLXSRVLS001 dockerd[2546]: time="2023-08-18T07:23:15.273565750+08:00" level=warning msg="Error getting v2 registry: Get \"https://registry-1.docker.io/v2/\": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"
+8月 18 07:23:15 SSSLXSRVLS001 dockerd[2546]: time="2023-08-18T07:23:15.274982288+08:00" level=error msg="Not continuing with pull after error: Get \"https://registry-1.docker.io/v2/\": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"
+8月 18 07:23:15 SSSLXSRVLS001 dockerd[2546]: time="2023-08-18T07:23:15.282483480+08:00" level=error msg="Handler for POST /v1.41/images/create returned error: Get \"https://registry-1.docker.io/v2/\": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"
