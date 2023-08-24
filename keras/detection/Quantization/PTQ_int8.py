@@ -7,10 +7,10 @@ from keras.models import load_model
 
 
 
-# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230819/good_detection_test_callback_2.h5"
-# imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good_enlarge/VOCdevkit/VOC2007/JPEGImages/"
-h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
-imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
+h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230819/good_detection_test_callback_2.h5"
+imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good_enlarge/VOCdevkit/VOC2007/JPEGImages/"
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
+# imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
 
 # 设置转换项： 配置转换选项，包括输入数据的数据类型(例如float32和uint8)和优化选项。在这里，需要将激活和权重量化为int8
 keras_model = load_model(h5_model_path, custom_objects={"compute_loss":None})
@@ -34,7 +34,9 @@ for i in list_dir:
 input_data = all_img
 input_data = np.array(input_data)
 input_data = np.expand_dims(input_data, axis=-1)
+input_data = input_data.astype(np.float32)
 input_data = input_data.astype(np.float32) / 127.5 - 1.0  # 这里是否需要 归一化到(-1,1)
+
 print("test dataset size: ", np.shape(input_data))
 
 #    校准模型，使用校准数据来估计量化参数

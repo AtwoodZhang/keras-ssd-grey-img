@@ -264,7 +264,16 @@ The Scaled L2 Norm Layer has been replaced with BatchNorm to make the net ONNX c
 The pretrained based is borrowed from https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth .
 
 ```bash
-python train_ssd.py --datasets ~/data/VOC0712/VOC2007/ ~/data/VOC0712/VOC2012/ --validation_dataset ~/data/VOC0712/test/VOC2007/ --net "vgg16-ssd" --base_net models/vgg16_reducedfc.pth  --batch_size 24 --num_epochs 150 --scheduler cosine --lr 0.0012 --t_max 150 --validation_epochs 5
+python train_ssd.py --datasets ~/data/VOC0712/VOC2007/ 
+                    --validation_dataset ~/data/VOC0712/test/VOC2007/ 
+                    --net "vgg16-ssd" 
+                    --base_net models/vgg16_reducedfc.pth  
+                    --batch_size 24 
+                    --num_epochs 150 
+                    --scheduler cosine 
+                    --lr 0.0012 
+                    --t_max 150 
+                    --validation_epochs 5
 ```
 
 ### Eval

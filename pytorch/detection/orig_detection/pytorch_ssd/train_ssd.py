@@ -4,6 +4,7 @@ import logging
 import sys
 import itertools
 
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -35,13 +36,17 @@ parser = argparse.ArgumentParser(
 parser.add_argument("--dataset_type", default="voc", type=str,
                     help='Specify dataset type. Currently support voc and open_images.')
 
-parser.add_argument('--datasets', nargs='+', help='Dataset directory path')
-parser.add_argument('--validation_dataset', help='Dataset directory path')
+parser.add_argument('--datasets', nargs='+',
+                    default=["/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/"], 
+                    help='Dataset directory path')
+parser.add_argument('--validation_dataset', 
+                    default="/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/",
+                    help='Dataset directory path')
 parser.add_argument('--balance_data', action='store_true',
                     help="Balance training data by down-sampling more frequent labels.")
 
 
-parser.add_argument('--net', default="vgg16-ssd",
+parser.add_argument('--net', default="mb2-ssd-lite",
                     help="The network architecture, it can be mb1-ssd, mb1-lite-ssd, mb2-ssd-lite, mb3-large-ssd-lite, mb3-small-ssd-lite or vgg16-ssd.")
 parser.add_argument('--freeze_base_net', action='store_true',
                     help="Freeze base net layers.")
