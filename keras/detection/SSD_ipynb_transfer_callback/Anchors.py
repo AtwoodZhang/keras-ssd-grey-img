@@ -58,10 +58,10 @@ class AnchorBox():
         # 计算先验框的宽高
         box_widths = 0.5 * np.array(box_widths)
         box_heights = 0.5 * np.array(box_heights)
-        anchor_boxes[:, ::4] -= box_widths
-        anchor_boxes[:, 1::4] -= box_heights
-        anchor_boxes[:, 2::4] += box_widths
-        anchor_boxes[:, 3::4] += box_heights
+        anchor_boxes[:, ::4] -= box_widths  # x1
+        anchor_boxes[:, 1::4] -= box_heights  # y1
+        anchor_boxes[:, 2::4] += box_widths  # x2
+        anchor_boxes[:, 3::4] += box_heights  # y2
         
         # --------------------------------- #
         #   将先验框变成小数的形式
