@@ -54,19 +54,19 @@ def visual_train(history):
     except Exception as e:
         print("no accuracy, only loss.")
         
-    loss = history['loss']
-    val_loss = history['val_loss']
-    epochs = range(len(loss)) # Get number of epochs
-    #-----------------------------------------------------------
-    # Plot training and validation loss per epoch
-    #-----------------------------------------------------------
-    plt.plot(epochs, loss, 'r', label = "train_loss")
-    plt.plot(epochs ,val_loss, 'b', label = "val_loss")
-    plt.title("training and validation loss")
-    plt.legend(loc=0)
-    plt.grid(ls='--')  # 生成网格
-    plt.show()
-    # 曲线呈直线是因为epochs/轮次太少
+        loss = history['loss']
+        val_loss = history['val_loss']
+        epochs = range(len(loss)) # Get number of epochs
+        #-----------------------------------------------------------
+        # Plot training and validation loss per epoch
+        #-----------------------------------------------------------
+        plt.plot(epochs, loss, 'r', label = "train_loss")
+        plt.plot(epochs ,val_loss, 'b', label = "val_loss")
+        plt.title("training and validation loss")
+        plt.legend(loc=0)
+        plt.grid(ls='--')  # 生成网格
+        plt.show()
+        # 曲线呈直线是因为epochs/轮次太少
     
 
 
