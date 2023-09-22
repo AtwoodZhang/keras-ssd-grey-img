@@ -1,0 +1,217 @@
+name: layer_parameter_test_0
+data:
+  datapath: "./data/imagenet" #"/home/teja/DNN_parser/layer_parameter_test/release0/data/imagenet"
+# testing:
+#   model_file: "/home/teja/DNN_parser/git_dnn_parser/imx681_layer_tests/pytorch/layer_parameter_tests/models/quantized_models/layer_parameter_test_0/model_quantized.pth"
+#   test_image: "/home/teja/DNN_parser/git_dnn_parser/imx681_layer_tests/pytorch/layer_parameter_tests/data/test/test_all_1.pgm"
+#   num_classes: 10
+#   input_w: 160
+#   input_h: 120
+#   debug_folder: "/home/teja/DNN_parser/git_dnn_parser/imx681_layer_tests/pytorch/layer_parameter_tests/debug"
+testing:
+  model_file: "./models/quantized_models"
+  test_image: "./data/test/test_all_127.pgm"
+  num_classes: 10
+  input_w: 160
+  input_h: 120
+  debug_folder: "./debug"
+training:
+  use_cuda: True
+  devices: 0
+  epochs: 50
+  lr: 0.001
+  momentum: 0.9 
+  batch_size: 2
+  classes: 10
+  save_trained_root_path: "./models/trained_models/" #"/home/teja/DNN_parser/layer_parameter_test/release0/models/trained_models/" #model_trained.pth
+  save_quantized_root_path: "./models/quantized_models/" #"/home/teja/DNN_parser/layer_parameter_test/release0/models/quantized_models/" #model_quantized.pth
+model:
+  quantize: True
+  input_width: 160
+  input_height: 120
+  input_channels: 1
+  layer_00:
+    set: True
+    name: "layer_00"
+    type: "DW" # Depthwise
+    in_channels: 1
+    out_channels: 8
+    K: 8
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU6" 
+  layer_01:
+    set: True
+    name: "layer_01"
+    type: "DW" # Depthwise
+    in_channels: 8
+    out_channels: 8
+    K: 1
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU6" 
+  layer_02:
+    set: True
+    name: "layer_02"
+    type: "DW" # Depthwise
+    in_channels: 8
+    out_channels: 8
+    K: 1
+    kernel: 3
+    stride: 1
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU6" 
+  layer_03:
+    set: True
+    name: "layer_03"
+    type: "Conv" # Normal Conv2d
+    in_channels: 8
+    out_channels: 8
+    kernel: 3
+    stride: 1
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU" 
+  layer_04:
+    set: True
+    name: "layer_04"
+    type: "Conv" # Normal Conv2d
+    in_channels: 8
+    out_channels: 16
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU6" 
+  layer_05:
+    set: True
+    name: "layer_05"
+    type: "Conv" # Normal Conv2d
+    in_channels: 16
+    out_channels: 24
+    kernel: 3
+    stride: 1
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "RELU" 
+  layer_06:
+    set: True
+    name: "layer_06"
+    type: "Conv" # Normal Conv2d
+    in_channels: 24
+    out_channels: 32
+    kernel: 3
+    stride: 1
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "" 
+  layer_07:
+    set: False
+    name: "layer_07"
+    type: "" # Empty indicates the absence of this layer
+    activation: "" 
+  layer_08:
+    set: True
+    name: "layer_08"
+    type: "Conv" # Normal Conv2d
+    in_channels: 8
+    out_channels: 34
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "" 
+  layer_09:
+    set: False
+    name: "layer_09"
+    type: "" # Empty indicates the absence of this layer
+    activation: "" 
+  layer_10:
+    set: True
+    name: "layer_10"
+    type: "Conv" # Normal Conv2d
+    in_channels: 24
+    out_channels: 50
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "RELU" 
+  layer_11:
+    set: True
+    name: "layer_11"
+    type: "Conv" # Normal Conv2d
+    in_channels: 50
+    out_channels: 64
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "RELU" 
+  layer_12:
+    set: True
+    name: "layer_12"
+    type: "Conv" # Normal Conv2d
+    in_channels: 64
+    out_channels: 64
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "RELU6" 
+  layer_13:
+    set: True
+    name: "layer_13"
+    type: "Conv" # Normal Conv2d
+    in_channels: 64
+    out_channels: 64
+    kernel: 3
+    stride: 2
+    padding: 
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "RELU6" 
+
+
+
+

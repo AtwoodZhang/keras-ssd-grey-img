@@ -1,0 +1,1 @@
+This folder contains files for per tensor quantization for FC layer.

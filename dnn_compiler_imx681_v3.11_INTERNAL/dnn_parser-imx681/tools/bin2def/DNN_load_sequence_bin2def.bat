@@ -1,0 +1,1 @@
+perl DNN_load_sequence_bin2def.pl dnn_human_detect_load_sequence_i2c.bin

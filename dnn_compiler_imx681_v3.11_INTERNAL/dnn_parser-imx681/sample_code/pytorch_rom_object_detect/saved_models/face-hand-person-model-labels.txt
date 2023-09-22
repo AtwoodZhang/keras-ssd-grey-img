@@ -1,0 +1,4 @@
+BACKGROUND
+face
+hand
+person

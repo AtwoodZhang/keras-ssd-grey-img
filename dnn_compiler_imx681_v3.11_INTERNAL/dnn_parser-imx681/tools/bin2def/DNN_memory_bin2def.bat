@@ -1,0 +1,3 @@
+perl DNN_memory_bin2def.pl dnn_human_detect_dnn_memory.bin 0x00280000
+perl DNN_memory_bin2def.pl dnn_human_detect_system_memory.bin 0x00185c00
+type dnn_reconf_param.def dnn_human_detect_dnn_memory.def dnn_human_detect_system_memory.def > memory_load_sequence.def

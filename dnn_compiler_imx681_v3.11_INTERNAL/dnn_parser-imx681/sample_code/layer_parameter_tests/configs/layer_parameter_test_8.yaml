@@ -1,0 +1,232 @@
+name: layer_parameter_test_8
+data:
+  datapath: "./data/imagenet" 
+testing:
+  model_file: "./models/quantized_models"
+  test_image: "./data/test/test_all_127.pgm"
+  num_classes: 10
+  input_w: 160
+  input_h: 120
+  debug_folder: "./debug"
+training:
+  use_cuda: True
+  devices: 0
+  epochs: 50
+  lr: 0.001
+  momentum: 0.9 
+  batch_size: 1
+  classes: 10
+  save_trained_root_path: "./models/trained_models/" 
+  save_quantized_root_path: "./models/quantized_models/"
+model:
+  quantize: True
+  input_width: 160
+  input_height: 120
+  input_channels: 1
+  layer_00:
+    set: False
+    name: "layer_00"
+    type: "" 
+    activation: "" 
+  layer_01:
+    set: True
+    name: "layer_01"
+    type: "Conv" # COnv2D
+    in_channels: 6
+    out_channels: 8
+    K: 1
+    kernel: 3
+    stride: 1
+    padding:
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "" 
+  layer_02:
+    set: True
+    name: "layer_02"
+    type: "DW" # Depthwise
+    in_channels: 8
+    out_channels: 8
+    K: 1
+    kernel: 3
+    stride: 1
+    padding:
+      type: "same"
+      padding_w: 1
+      padding_h: 1
+    BN: True
+    activation: "" 
+  layer_03:
+    set: True
+    name: "layer_03"
+    type: "MaxPool2D" # UpSampling or Down Sampling
+    in_channels: 8
+    out_channels: 8
+    BN: True
+    activation: "" 
+    kernel: 2
+    stride: 2
+    padding:
+      type: "same"
+      padding_w: 0
+      padding_h: 0
+  layer_04:
+    set: True
+    name: "layer_04"
+    type: "DW" # Depthwise
+    in_channels: 8
+    out_channels: 8
+    K: 1
+    kernel: 1
+    stride: 1
+    padding:
+      type: "valid"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "" 
+  layer_05:
+    set: False
+    name: "layer_05"
+    type: "" 
+    activation: "" 
+  layer_06:
+    set: True
+    name: "layer_06"
+    type: "RELU" 
+    activation: "RELU" 
+    kernel: 1 # Redundant
+    stride: 1 # Redundant
+    padding: # Redundant
+      type: "same"
+      padding_w: 0
+      padding_h: 0 
+    BN: False
+  layer_07:
+    set: True
+    name: "layer_07"
+    type: "MaxPool2D" # UpSampling or Down Sampling
+    in_channels: 8
+    out_channels: 8
+    BN: True
+    activation: "" 
+    kernel: 2
+    stride: 2
+    padding:
+      type: "same"
+      padding_w: 0
+      padding_h: 0
+  layer_08:
+    set: True
+    name: "layer_08"
+    type: "Conv" # COnv2D
+    in_channels: 8
+    out_channels: 4
+    K: 1
+    kernel: 1
+    stride: 1
+    padding:
+      type: "same"
+      padding_w: 0
+      padding_h: 0
+    BN: True
+    activation: "" 
+  layer_09:
+    set: False
+    name: "layer_09"
+    type: "" 
+    activation: "" 
+  layer_10:
+    set: False
+    name: "layer_10"
+    type: "" 
+    activation: "" 
+  layer_11:
+    set: False
+    name: "layer_11"
+    type: "" 
+    activation: "" 
+  layer_12:
+    set: True
+    name: "layer_12"
+    type: "FC" # UpSampling or Down Sampling
+    in_channels: 300
+    out_channels: 20
+    BN: False
+    activation: "" 
+    kernel: 1
+    stride: 1
+    padding:
+      type: "same"
+      padding_w: 0
+      padding_h: 0 
+  layer_13:
+    set: False
+    name: "layer_13"
+    type: "" 
+    activation: "" 
+  layer_14:
+    set: False
+    name: "layer_14"
+    type: "" 
+    activation: "" 
+  layer_15:
+    set: True
+    name: "layer_15"
+    type: "FC" # UpSampling or Down Sampling
+    in_channels: 160
+    out_channels: 10
+    BN: False
+    activation: "" 
+    kernel: 1
+    stride: 1
+    padding:
+      type: "same"
+      padding_w: 0
+      padding_h: 0 
+  layer_16:
+    set: False
+    name: "layer_16"
+    type: "" 
+    activation: "" 
+  layer_17:
+    set: False
+    name: "layer_17"
+    type: "" 
+    activation: "" 
+  layer_18:
+    set: False
+    name: "layer_18"
+    type: "" 
+    activation: "" 
+  layer_19:
+    set: False
+    name: "layer_19"
+    type: "" 
+    activation: "" 
+  layer_20:
+    set: False
+    name: "layer_20"
+    type: "" 
+    activation: "" 
+  layer_21:
+    set: False
+    name: "layer_21"
+    type: "" 
+    activation: "" 
+  layer_22:
+    set: False
+    name: "layer_22"
+    type: "" 
+    activation: "" 
+  classification:
+    set: False
+    in_channels: 400
+  sigmoid:
+    set: False
+
+
+
+

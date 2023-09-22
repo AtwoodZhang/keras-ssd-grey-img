@@ -51,7 +51,8 @@ class VOCDataset:
             # 'motorbike', 'person', 'pottedplant',
             # 'sheep', 'sofa', 'train', 'tvmonitor')
             #self.class_names = ('BACKGROUND','bicycle',)
-            self.class_names = ('BACKGROUND', 'dog')
+            # self.class_names = ('BACKGROUND', 'dog')
+            self.class_names = ('BACKGROUND', 'good')
 
 
         self.class_dict = {class_name: i for i, class_name in enumerate(self.class_names)}
