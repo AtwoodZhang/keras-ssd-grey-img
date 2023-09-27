@@ -57,12 +57,16 @@ class AnchorBox():
         anchor_boxes = np.tile(anchor_boxes, (1, 2 * num_anchors_)) # Numpy的 tile() 函数，就是将原矩阵横向、纵向地复制。
         
         # 计算先验框的宽高
-        box_widths = 0.5 * np.array(box_widths)
-        box_heights = 0.5 * np.array(box_heights)
-        anchor_boxes[:, ::4] -= box_widths  # x1
-        anchor_boxes[:, 1::4] -= box_heights  # y1
-        anchor_boxes[:, 2::4] += box_widths  # x2
-        anchor_boxes[:, 3::4] += box_heights  # y2
+        # box_widths = 0.5 * np.array(box_widths)
+        # box_heights = 0.5 * np.array(box_heights)
+        # anchor_boxes[:, ::4] -= box_widths  # x1
+        # anchor_boxes[:, 1::4] -= box_heights  # y1
+        # anchor_boxes[:, 2::4] += box_widths  # x2
+        # anchor_boxes[:, 3::4] += box_heights  # y2
+        # anchor_boxes[:, ::4] -= box_widths  # x1
+        # anchor_boxes[:, 1::4] -= box_heights  # y1
+        anchor_boxes[:, 2::4] = box_widths  # x2
+        anchor_boxes[:, 3::4] = box_heights  # y2
         
         anchor_yxhw = copy.deepcopy(anchor_boxes)
         # # --------------------------------- #
@@ -71,9 +75,9 @@ class AnchorBox():
         # # --------------------------------- #
         # anchor_boxes[:, ::2] /= img_width
         # anchor_boxes[:, 1::2] /= img_height
+        
         anchor_boxes = anchor_boxes.reshape(-1, 4)
-
-        anchor_boxes = np.minimum(np.maximum(anchor_boxes, 0.0), 1.0)
+        # anchor_boxes = np.minimum(np.maximum(anchor_boxes, 0.0), 1.0)
         return anchor_boxes
 
 

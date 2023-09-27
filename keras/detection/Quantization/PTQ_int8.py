@@ -7,7 +7,7 @@ from keras.models import load_model
 
 
 
-h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230819/good_detection_test_callback_2.h5"
+h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230922/good_detection_test_callback_2.h5"
 imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good_enlarge/VOCdevkit/VOC2007/JPEGImages/"
 # h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
 # imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
@@ -35,7 +35,7 @@ input_data = all_img
 input_data = np.array(input_data)
 input_data = np.expand_dims(input_data, axis=-1)
 input_data = input_data.astype(np.float32)
-input_data = input_data.astype(np.float32) / 127.5 - 1.0  # 这里是否需要 归一化到(-1,1)
+input_data = input_data.astype(np.float32) / 127.5 - 1.0 
 
 print("test dataset size: ", np.shape(input_data))
 
@@ -49,6 +49,6 @@ converter.representative_dataset = representative_data_gen
 # 2. 将模型转换为TFLite模型，执行转换操作，并将量化的TFLite模型保存为文件；
 tflite_model = converter.convert()
 #    保存为TFLite文件
-with open('quantized_model_0818.tflite', 'wb') as f:
+with open('quantized_model_0922.tflite', 'wb') as f:
     f.write(tflite_model)
-    print("has been written to: quantized_model_0818.tflite")
+    print("has been written to: quantized_model_0922.tflite")
