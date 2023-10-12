@@ -76,7 +76,7 @@ def val(loader, model, criterion, device):
        
 
 def main():
-    logging.basicConfig(filename="./output/pytorch/demo/train.log", level=logging.INFO)  # log to file
+    logging.basicConfig(filename="/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/pytorch/classification/demo/train.log", level=logging.INFO)  # log to file
     logging.getLogger().addHandler(logging.StreamHandler())  # also print to console output
     args = get_args()
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() and args.use_cuda else "cpu")

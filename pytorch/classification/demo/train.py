@@ -72,7 +72,7 @@ def val(loader, model, criterion, device):
        
 
 def main():
-    logging.basicConfig(filename="./output/pytorch/demo/train.log", level=logging.INFO)  # log to file
+    logging.basicConfig(filename="/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/pytorch/classification/demo/train.log", level=logging.INFO)  # log to file
     logging.getLogger().addHandler(logging.StreamHandler())  # also print to console output
     args = get_args()
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() and args.use_cuda else "cpu")
@@ -147,23 +147,24 @@ def main():
     """
     save model
     """
-    save_path = os.path.join(os.getcwd(), "./output/pytorch/demo/model_0816.pkl")
+    # save_path = os.path.join(os.getcwd(), "./output/pytorch/demo/model_0816.pkl")
+    save_path = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/pytorch/classification/demo/model_1011.pkl"
     torch.save(model_cpu.state_dict(), save_path)
     logging.info("Model saved to {}".format(save_path))
     
     """ 
     quantization
     """
-    # logging.info("Converting the model (post-training)...")
-    # model_cpu = torch.quantization.convert(model_cpu)
-    # logging.info("Quantization done.")
-    # if args.use_cuda and torch.cuda.is_available():
-    #     model_out = model_cpu.module
-    # else:
-    #     model_out = model_cpu
-    # savepath = os.path.join(os.getcwd(), 'model_quantized.pth')
-    # torch.save(model_out.state_dict(), savepath)
-    # logging.info("Model saved to {}".format(savepath))
+    logging.info("Converting the model (post-training)...")
+    model_cpu = torch.quantization.convert(model_cpu)
+    logging.info("Quantization done.")
+    if args.use_cuda and torch.cuda.is_available():
+        model_out = model_cpu.module
+    else:
+        model_out = model_cpu
+    savepath = os.path.join(os.getcwd(), 'model_quantized.pth')
+    torch.save(model_out.state_dict(), savepath)
+    logging.info("Model saved to {}".format(savepath))
         
     
 if __name__ == "__main__":
