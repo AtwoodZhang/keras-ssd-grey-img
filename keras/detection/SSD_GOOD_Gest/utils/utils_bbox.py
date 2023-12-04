@@ -101,7 +101,7 @@ class BBoxUtility(object):
                 #   判断是否大于门限
                 #--------------------------------#
                 c_confs     = mbox_conf[i, :, c]
-                c_confs_m   = c_confs > confidence
+                c_confs_m   = c_confs > confidence  
                 if len(c_confs[c_confs_m]) > 0:
                     #-----------------------------------------#
                     #   取出得分高于confidence的框

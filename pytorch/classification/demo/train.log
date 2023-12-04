@@ -254,3 +254,74 @@ INFO:root:Epoch: 5, Step: 900, Average Loss: 1.0486
 INFO:root:Epoch: 5, Step: 1000, Average Loss: 1.0567
 INFO:root:Epoch: 5, Step: 1100, Average Loss: 1.0213
 INFO:root:Epoch: 5, Step: 1200, Average Loss: 1.0219
+INFO:root:Epoch: 5, Step: 1300, Average Loss: 0.9968
+INFO:root:Epoch: 5, Step: 1400, Average Loss: 0.9802
+INFO:root:Epoch: 5, Step: 1500, Average Loss: 1.0079
+INFO:root:Epoch: 5,Training Loss:  1.0079, Validation Loss: 1.0723, Validation Acc: 0.6258
+INFO:root:Epoch: 6, Step: 100, Average Loss: 1.0218
+INFO:root:Epoch: 6, Step: 200, Average Loss: 0.9813
+INFO:root:Epoch: 6, Step: 300, Average Loss: 0.9825
+INFO:root:Epoch: 6, Step: 400, Average Loss: 0.9752
+INFO:root:Epoch: 6, Step: 500, Average Loss: 0.9686
+INFO:root:Epoch: 6, Step: 600, Average Loss: 0.9891
+INFO:root:Epoch: 6, Step: 700, Average Loss: 0.9999
+INFO:root:Epoch: 6, Step: 800, Average Loss: 1.0094
+INFO:root:Epoch: 6, Step: 900, Average Loss: 0.9279
+INFO:root:Epoch: 6, Step: 1000, Average Loss: 1.0008
+INFO:root:Epoch: 6, Step: 1100, Average Loss: 0.9984
+INFO:root:Epoch: 6, Step: 1200, Average Loss: 0.9987
+INFO:root:Epoch: 6, Step: 1300, Average Loss: 0.9764
+INFO:root:Epoch: 6, Step: 1400, Average Loss: 0.9818
+INFO:root:Epoch: 6, Step: 1500, Average Loss: 0.9605
+INFO:root:Epoch: 6,Training Loss:  0.9605, Validation Loss: 0.9987, Validation Acc: 0.6535
+INFO:root:Epoch: 7, Step: 100, Average Loss: 0.9612
+INFO:root:Epoch: 7, Step: 200, Average Loss: 0.9262
+INFO:root:Epoch: 7, Step: 300, Average Loss: 0.9755
+INFO:root:Epoch: 7, Step: 400, Average Loss: 0.9357
+INFO:root:Epoch: 7, Step: 500, Average Loss: 0.9415
+INFO:root:Epoch: 7, Step: 600, Average Loss: 0.9575
+INFO:root:Epoch: 7, Step: 700, Average Loss: 0.9611
+INFO:root:Epoch: 7, Step: 800, Average Loss: 0.9345
+INFO:root:Epoch: 7, Step: 900, Average Loss: 0.9370
+INFO:root:Epoch: 7, Step: 1000, Average Loss: 0.9474
+INFO:root:Epoch: 7, Step: 1100, Average Loss: 0.9460
+INFO:root:Epoch: 7, Step: 1200, Average Loss: 0.9651
+INFO:root:Epoch: 7, Step: 1300, Average Loss: 0.9561
+INFO:root:Epoch: 7, Step: 1400, Average Loss: 0.9538
+INFO:root:Epoch: 7, Step: 1500, Average Loss: 0.9613
+INFO:root:Epoch: 7,Training Loss:  0.9613, Validation Loss: 0.9799, Validation Acc: 0.6581
+INFO:root:Epoch: 8, Step: 100, Average Loss: 0.9321
+INFO:root:Epoch: 8, Step: 200, Average Loss: 0.9154
+INFO:root:Epoch: 8, Step: 300, Average Loss: 0.9392
+INFO:root:Epoch: 8, Step: 400, Average Loss: 0.9494
+INFO:root:Epoch: 8, Step: 500, Average Loss: 0.9391
+INFO:root:Epoch: 8, Step: 600, Average Loss: 0.9407
+INFO:root:Epoch: 8, Step: 700, Average Loss: 0.9059
+INFO:root:Epoch: 8, Step: 800, Average Loss: 0.8927
+INFO:root:Epoch: 8, Step: 900, Average Loss: 0.8912
+INFO:root:Epoch: 8, Step: 1000, Average Loss: 0.9329
+INFO:root:Epoch: 8, Step: 1100, Average Loss: 0.8914
+INFO:root:Epoch: 8, Step: 1200, Average Loss: 0.9233
+INFO:root:Epoch: 8, Step: 1300, Average Loss: 0.9330
+INFO:root:Epoch: 8, Step: 1400, Average Loss: 0.8918
+INFO:root:Epoch: 8, Step: 1500, Average Loss: 0.9158
+INFO:root:Epoch: 8,Training Loss:  0.9158, Validation Loss: 0.9575, Validation Acc: 0.6586
+INFO:root:Epoch: 9, Step: 100, Average Loss: 0.9270
+INFO:root:Epoch: 9, Step: 200, Average Loss: 0.8799
+INFO:root:Epoch: 9, Step: 300, Average Loss: 0.8826
+INFO:root:Epoch: 9, Step: 400, Average Loss: 0.9116
+INFO:root:Epoch: 9, Step: 500, Average Loss: 0.9086
+INFO:root:Epoch: 9, Step: 600, Average Loss: 0.9201
+INFO:root:Epoch: 9, Step: 700, Average Loss: 0.8998
+INFO:root:Epoch: 9, Step: 800, Average Loss: 0.8924
+INFO:root:Epoch: 9, Step: 900, Average Loss: 0.8750
+INFO:root:Epoch: 9, Step: 1000, Average Loss: 0.8896
+INFO:root:Epoch: 9, Step: 1100, Average Loss: 0.9219
+INFO:root:Epoch: 9, Step: 1200, Average Loss: 0.8963
+INFO:root:Epoch: 9, Step: 1300, Average Loss: 0.8800
+INFO:root:Epoch: 9, Step: 1400, Average Loss: 0.9031
+INFO:root:Epoch: 9, Step: 1500, Average Loss: 0.8831
+INFO:root:Epoch: 9,Training Loss:  0.8831, Validation Loss: 0.9550, Validation Acc: 0.6666
+INFO:root:Model saved to /home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/pytorch/classification/demo/model_1011.pkl
+INFO:root:2023-11-07 03:13:53
+INFO:root:Model created
