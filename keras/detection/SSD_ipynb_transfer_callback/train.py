@@ -40,7 +40,7 @@ if __name__ == "__main__":
     save_dir = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230809/"
     
     # 设置SSD参数
-    cls_name_path = "./model_data/voc_classes.txt"  # 导入目标检测类别；
+    cls_name_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/model_data/voc_classes.txt"  # 导入目标检测类别；
     input_shape = [120, 160]  # 输入的尺寸大小
     anchor_size = [32, 59, 86, 113, 141, 168]  # 用于设定先验框的大小，根据公式计算而来；如果要检测小物体，修改浅层先验框的大小，越小的话，识别的物体越小；    
     train_annotation_path = '2007_train.txt'  # 训练图片路径和标签
