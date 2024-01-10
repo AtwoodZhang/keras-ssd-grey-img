@@ -6,8 +6,8 @@ from keras.models import load_model
 # 模型训练是设定了图片归一化到(-1,1),方法是：img/127.5-1.0
 
 
-h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_two_objects/output/20231206/20231213_good_detection_test_callback.h5"
-imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/cola_and_hand/Object_detection_dataset/VOC2007/JPEGImages/"
+h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/1227/20231227.h5"
+imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/VOC2007/JPEGImages/"
 # h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
 # imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
 
@@ -48,6 +48,6 @@ converter.representative_dataset = representative_data_gen
 # 2. 将模型转换为TFLite模型，执行转换操作，并将量化的TFLite模型保存为文件；
 tflite_model = converter.convert()
 #    保存为TFLite文件
-with open('quantized_model_1214.tflite', 'wb') as f:
+with open('quantized_model_1227.tflite', 'wb') as f:
     f.write(tflite_model)
-    print("has been written to: quantized_model_1214.tflite")
+    print("has been written to: quantized_model_1227.tflite")

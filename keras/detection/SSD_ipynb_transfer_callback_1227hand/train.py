@@ -10,7 +10,6 @@ from keras.optimizers import SGD, Adam
 import numpy as np
 import math
 import keras
-import copy
 from PIL import Image
 from random import shuffle
 from keras import layers as KL
@@ -38,22 +37,19 @@ if __name__ == "__main__":
     momentum = 0.937
     batch_size = 32
     imgcolor = 'grey'  # imgcolor选“rgb” or “grey”, 则处理图像变单通道或者三通道
-    save_dir = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_two_objects/output/20231219/"
+    save_dir = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/1227"
     
     # 设置SSD参数
-    cls_name_path = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_two_objects/model_data/voc_classes.txt"  # 导入目标检测类别；
+    cls_name_path = r"/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/voc_classes.txt"  # 导入目标检测类别；
     input_shape = [120, 160]  # 输入的尺寸大小
     anchor_size = [32, 59, 86, 113, 141, 168]  # 用于设定先验框的大小，根据公式计算而来；如果要检测小物体，修改浅层先验框的大小，越小的话，识别的物体越小；    
-    train_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/cola_and_hand/2007_train.txt'  # 训练图片路径和标签
-    val_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/cola_and_hand/2007_val.txt'  # 验证图片路径和标签
+    train_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/hand/2007_train.txt'  # 训练图片路径和标签
+    val_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/hand/2007_val.txt'  # 验证图片路径和标签
     
     # 1. 获取classes和anchor
     class_names, num_cls = get_classes(cls_name_path)
     num_cls += 1  # 增加一个背景类别
-    
-    cls_names = copy.deepcopy(class_names)
-    cls_names.insert(0, "Background")
-    print("class_names:", cls_names, "num_classes:", num_cls)
+    print("class_names:", class_names, "num_classes:", num_cls)
     
     # 2. 获取anchors, 输出的是归一化之后的anchors
     anchor = get_anchors(input_shape, anchor_size)
@@ -74,7 +70,6 @@ if __name__ == "__main__":
     # optimizer = Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     from tensorflow.keras.optimizers import legacy
     optimizer = legacy.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
-
     
     # 5. 导入数据集
     with open(train_annotation_path, encoding='utf-8') as f:
@@ -140,5 +135,5 @@ if __name__ == "__main__":
     )  # 使用tensorboard --logdir="" 调用查看loss
     
     record_log(history, filename = os.path.join(save_dir, "unetlogs/log.txt"))
-    model.save(os.path.join(save_dir, "20231213_good_detection_test_callback_samller.h5"))
-    model.save(os.path.join(save_dir, "20231213_good_detection_test_callback_samller.pb"))
+    model.save(os.path.join(save_dir, "20231227.h5"))
+    model.save(os.path.join(save_dir, "20231227.pb"))

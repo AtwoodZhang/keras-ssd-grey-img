@@ -1,56 +1,54 @@
 import copy
 from Anchors import get_anchors
+from Anchors_orig_size import get_anchors2
 from pprint import pprint
 import numpy as np
 
 
-def round_list(input_list, decimals=0):
-    return [[int(round(value, decimals)) for value in row] for row in input_list]
+class AnchorConverter(object):
+    def __init__(self, input_shape=[120, 160], anchors_size=[32, 59, 86, 113, 140, 168]):
+        self.input_shape = input_shape
+        self.img_width = self.input_shape[1]
+        self.img_height = self.input_shape[0]
+        self.anchors_size = anchors_size
+    def prepare_anchors(self):
+        anchors = get_anchors(input_shape=self.input_shape, anchors_size=self.anchors_size)
+        return anchors
+    def prepare_no_normalized_anchors(self):
+        anchors = get_anchors2(input_shape=self.input_shape, anchors_size=self.anchors_size)
+        print(anchors)
+        return anchors
+        
+    def convert_relative_to_absolute(self):
+        # ---------------------------------------------#
+        #   将相对坐标转换为绝对坐标
+        #   输入：
+        #       anchors: (m, 4)
+        #       anchors的顺序为：x1, y1, x2, y2
+        #   输出：
+        #       absolute_anchors: (m, 4)
+        #       absolute_anchors的顺序为：center_y, center_x, h, w
+        # ---------------------------------------------#
+        anchors = self.prepare_anchors()
+        absolute_anchors = np.zeros_like(anchors)
+        absolute_anchors[:, 0] = np.round(0.5 * (anchors[:, 1] + anchors[:, 3]) * self.img_height) # center_y
+        absolute_anchors[:, 1] = np.round(0.5 * (anchors[:, 0] + anchors[:, 2]) * self.img_width)  # center_x
+        absolute_anchors[:, 2] = np.round((anchors[:, 3] - anchors[:, 1]) * self.img_height)  # h
+        absolute_anchors[:, 3] = np.round((anchors[:, 2] - anchors[:, 0]) * self.img_width)  # w
 
-
-input_shape = [120, 160]
-anchors_size=[24, 59, 86, 113, 141, 168]
-img_width = input_shape[1]
-img_height = input_shape[0]
-anchors = get_anchors(input_shape, anchors_size)  # (x1, y1, x2, y2)
-anchors[:, ::2] *= img_width
-anchors[:, 1::2] *= img_height
-xywh_anchors = copy.deepcopy(anchors)
-
-# # 将x, y交换，按照681要求，改为：y, x, h, w
-# xywh_anchors[:, 2::4] = anchors[:, 3::4] - anchors[:, 1::4]  # box_height = y2-y1
-# xywh_anchors[:, 3::4] = anchors[:, 2::4] - anchors[:, ::4]  # box_width = x2 - x1
-
-# # xywh_anchors[:, 0::4] = anchors[:, 1::4] + (0.5*xywh_anchors[:, 2::4])  # center_y = y1 + 0.5*box_height
-# # xywh_anchors[:, 1::4] = anchors[:, ::4] + (0.5*xywh_anchors[:, 3::4])  # center_x = x1 + 0.5*box_width
-# xywh_anchors[:, 0::4] = 0.5*(anchors[:, 3::4] + anchors[:, 1::4])  # center_y = 0.5*(y2+y1)
-# xywh_anchors[:, 1::4] = 0.5*(anchors[:, 2::4] + anchors[:, 0::4])  # center_x = 0.5*(x2+x1)
-
-
-# 将x, y交换，按照681要求，改为：y, x, h, w
-xywh_anchors[:, 2] = anchors[:, 3] - anchors[:, 1]  # box_height = y2-y1
-xywh_anchors[:, 3] = anchors[:, 2] - anchors[:, 0]  # box_width = x2 - x1
-
-xywh_anchors[:, 0] = 0.5*(anchors[:, 3] + anchors[:, 1])  # center_y = 0.5*(y2+y1)
-xywh_anchors[:, 1] = 0.5*(anchors[:, 2] + anchors[:, 0])  # center_x = 0.5*(x2+x1)
-
-
-
-# print(xywh_anchors)
-
-# rounded_anchors = xywh_anchors
-# rounded_anchors = round_list(xywh_anchors, decimals=0)
-# print("四舍五入之后：")
-
-# yxhw_anchors = xywh_anchors
-rounded_anchors = np.floor(xywh_anchors).astype(int)
-pprint(rounded_anchors)
-
-
-# anchors_txt_path = "./anchors_0911_half_sum.txt"
-# with open(anchors_txt_path, 'w') as f:
-#     for r in rounded_anchors:
-#         row_str = ', '.join(map(str, r))
-#         f.write("  " + row_str + ',\n')
-# print("write to: " + anchors_txt_path + "  finish")
-
+        print(absolute_anchors)
+        return absolute_anchors
+    
+    def written_anchors(self, written_path="./anchors_1225.txt"):
+        absolute_anchors = self.convert_relative_to_absolute()
+        anchors_txt_path = written_path
+        rounded_anchors = np.floor(absolute_anchors).astype(int)
+        with open(anchors_txt_path, 'w') as f:
+            for r in rounded_anchors:
+                row_str = ', '.join(map(str, r))
+                f.write("  " + row_str + ',\n')
+        print("write to: " + anchors_txt_path + "  finish")
+        
+m = AnchorConverter()
+absolute_anchors = m.written_anchors()
+# anchors2 = m.prepare_no_normalized_anchors()

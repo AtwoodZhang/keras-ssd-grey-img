@@ -64,17 +64,28 @@ class AnchorBox():
         anchor_boxes[:, 2::4] += box_widths  # x2
         anchor_boxes[:, 3::4] += box_heights  # y2
         
-        anchor_yxhw = copy.deepcopy(anchor_boxes)
+        
         # # --------------------------------- #
         # #   将先验框变成小数的形式
         # #   归一化
         # # --------------------------------- #
         # anchor_boxes[:, ::2] /= img_width
         # anchor_boxes[:, 1::2] /= img_height
+        # print(np.shape(anchor_boxes))
         anchor_boxes = anchor_boxes.reshape(-1, 4)
-
-        anchor_boxes = np.minimum(np.maximum(anchor_boxes, 0.0), 1.0)
-        return anchor_boxes
+        # print(np.shape(anchor_boxes))
+        
+        anchor_yxhw = np.zeros_like(anchor_boxes)
+        anchor_yxhw[:, 0] = 0.5 * (anchor_boxes[:, 1] + anchor_boxes[:, 3])  # center_y
+        anchor_yxhw[:, 1] = 0.5 * (anchor_boxes[:, 0] + anchor_boxes[:, 2])  # center_x
+        anchor_yxhw[:, 2] = anchor_boxes[:, 3] - anchor_boxes[:, 1]  # height
+        anchor_yxhw[:, 3] = anchor_boxes[:, 2] - anchor_boxes[:, 0]  # width
+        # print(np.shape(anchor_yxhw))
+        # print("-----------")
+        
+        # anchor_boxes = np.minimum(np.maximum(anchor_boxes, 0.0), 1.0)
+        # return anchor_boxes
+        return anchor_yxhw
 
 
 def get_img_output_length(height, width):
@@ -84,7 +95,7 @@ def get_img_output_length(height, width):
 
 
 # 2. 获取anchors
-def get_anchors(input_shape=[120, 160], anchors_size=[32, 59, 86, 113, 140, 168]):
+def get_anchors2(input_shape=[120, 160], anchors_size=[32, 59, 86, 113, 140, 168]):
     # (feature_heights = [15, 8, 4, 2, 1], feature_widths = [20, 10, 5, 3, 1])
     feature_heights, feature_widths = get_img_output_length(input_shape[0], input_shape[1])
     aspect_ratios = [[1], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]  # anchor的长宽比
