@@ -14,8 +14,8 @@ from utils_bbox import BBoxUtility
 
 class SSD(object):
     _defaults = {
-        "model_path"        : '/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230819/good_detection_test_callback_2.h5',
-        "classes_path"      : '/home/zhangyouan/桌面/zya/NN_net/network/SSD/test2_ssd_test_good/model_data/voc_classes.txt',
+        "model_path"        : '/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240228.h5',
+        "classes_path"      : '/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/voc_classes.txt',
         "input_shape"       : [120, 160],
         #---------------------------------------------------------------------#
         #   只有得分大于置信度的预测框会被保留下来
