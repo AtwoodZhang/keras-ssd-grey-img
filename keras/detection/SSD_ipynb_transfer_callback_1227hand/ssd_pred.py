@@ -14,7 +14,7 @@ from utils_bbox import BBoxUtility
 
 class SSD(object):
     _defaults = {
-        "model_path"        : '/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240228.h5',
+        "model_path"        : '/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240311.h5',
         "classes_path"      : '/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/voc_classes.txt',
         "input_shape"       : [120, 160],
         #---------------------------------------------------------------------#
