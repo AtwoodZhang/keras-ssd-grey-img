@@ -36,8 +36,8 @@ class AnchorBox():
         # 划分特征层，计算所有的anchors
         
         # 获得所有先验框的宽高1/2
-        box_widths  = 0.5 * np.array(box_widths)
-        box_heights = 0.5 * np.array(box_heights)
+        # box_widths  = 0.5 * np.array(box_widths)
+        # box_heights = 0.5 * np.array(box_heights)
         
         # 每一个特征层对应的步长
         step_x = img_width / layer_width  # width方向的步长，160/20 = 8 
