@@ -10,7 +10,8 @@ from keras.models import load_model
 # imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/VOC2007/JPEGImages/"
 # h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
 # imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
-h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240228.h5"
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240626_01.h5"
+h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/1227/20240708_command.h5"
 imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/VOC2007/JPEGImages/"
 
 
@@ -51,6 +52,6 @@ converter.representative_dataset = representative_data_gen
 # 2. 将模型转换为TFLite模型，执行转换操作，并将量化的TFLite模型保存为文件；
 tflite_model = converter.convert()
 #    保存为TFLite文件
-with open('quantized_hand_model_0229.tflite', 'wb') as f:
+with open('quantized_hand_model_20240708.tflite', 'wb') as f:
     f.write(tflite_model)
-    print("has been written to: quantized_hand_model_0229.tflite")
+    print("has been written to: quantized_hand_model_20240708.tflite")

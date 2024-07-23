@@ -135,5 +135,5 @@ if __name__ == "__main__":
     )  # 使用tensorboard --logdir="" 调用查看loss
     
     record_log(history, filename = os.path.join(save_dir, "unetlogs/log.txt"))
-    model.save(os.path.join(save_dir, "20231227.h5"))
-    model.save(os.path.join(save_dir, "20231227.pb"))
+    model.save(os.path.join(save_dir, "20240708_command.h5"))
+    model.save(os.path.join(save_dir, "20240708_command.pb"))

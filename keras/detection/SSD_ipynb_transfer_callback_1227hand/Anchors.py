@@ -82,7 +82,7 @@ def get_img_output_length(height, width):
 
 
 # 2. 获取anchors
-def get_anchors(input_shape=[120, 160], anchors_size=[32, 59, 86, 113, 140, 168]):
+def get_anchors(input_shape=[120, 160], anchors_size=[32, 59, 86, 113, 141, 168]):
     # (feature_heights = [15, 8, 4, 2, 1], feature_widths = [20, 10, 5, 3, 1])
     feature_heights, feature_widths = get_img_output_length(input_shape[0], input_shape[1])
     aspect_ratios = [[1], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]  # anchor的长宽比

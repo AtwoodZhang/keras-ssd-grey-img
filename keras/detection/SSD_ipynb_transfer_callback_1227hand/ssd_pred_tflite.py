@@ -119,13 +119,28 @@ class SSD(object):
         image_data = np.expand_dims(np.array(image_data, dtype='float32'), 0)
         image_data = np.expand_dims(np.array(image_data, dtype='float32'), -1)
         image_data = image_data / 127.5 - 1.0
+        image_data_int8 = np.round(image_data*127).astype(np.int8)
 
         preds = self.ssd.predict(image_data)
+        
+        # tflite predict
+        import tensorflow as tf
+        tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/quantized_hand_model_20240708.tflite"
+        interpreter = tf.lite.Interpreter(model_path = tflite_model)
+        interpreter.allocate_tensors()
+        input_details = interpreter.get_input_details()  # 设置网络输入
+        output_details = interpreter.get_output_details()  # 设置网络输出
+        interpreter.set_tensor(input_details[0]['index'], image_data_int8)  # 将数据输入到网络中
+        interpreter.invoke()  # 运行推理
+        output_data = interpreter.get_tensor(output_details[0]['index'])
+        output_data = 0.0879112109541893*(output_data-1)
         
         #-----------------------------------------------------------#
         #   将预测结果进行解码
         #-----------------------------------------------------------#
-        results     = self.bbox_util.decode_box(preds, self.anchors, image_shape, 
+        # results     = self.bbox_util.decode_box(preds, self.anchors, image_shape, 
+        #                                         self.input_shape, self.letterbox_image, confidence=self.confidence)
+        results     = self.bbox_util.decode_box(output_data, self.anchors, image_shape, 
                                                 self.input_shape, self.letterbox_image, confidence=self.confidence)
         #--------------------------------------#
         #   如果没有检测到物体，则返回原图

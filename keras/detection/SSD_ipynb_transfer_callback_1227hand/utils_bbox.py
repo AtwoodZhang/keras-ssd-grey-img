@@ -51,16 +51,12 @@ class BBoxUtility(object):
         anchor_center_y  = 0.5 * (anchors[:, 3] + anchors[:, 1])
         
         # 真实框距离先验框中心的xy轴偏移情况
-        decode_bbox_center_x = mbox_loc[:, 0] * anchor_width * variances[0]
-        decode_bbox_center_x += anchor_center_x
-        decode_bbox_center_y = mbox_loc[:, 1] * anchor_height * variances[1]
-        decode_bbox_center_y += anchor_center_y
+        decode_bbox_center_x = mbox_loc[:, 0] * anchor_width * variances[0] + anchor_center_x
+        decode_bbox_center_y = mbox_loc[:, 1] * anchor_height * variances[1] + anchor_center_y
         
         # 真实框的宽与高的求取
-        decode_bbox_width   = np.exp(mbox_loc[:, 2] * variances[2])
-        decode_bbox_width   *= anchor_width
-        decode_bbox_height  = np.exp(mbox_loc[:, 3] * variances[3])
-        decode_bbox_height  *= anchor_height
+        decode_bbox_width   = np.exp(mbox_loc[:, 2] * variances[2]) * anchor_width
+        decode_bbox_height  = np.exp(mbox_loc[:, 3] * variances[3]) * anchor_height
 
         # 获取真实框的左上角与右下角
         decode_bbox_xmin = decode_bbox_center_x - 0.5 * decode_bbox_width
