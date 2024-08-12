@@ -5,14 +5,11 @@ from PIL import Image
 from keras.models import load_model
 # 模型训练是设定了图片归一化到(-1,1),方法是：img/127.5-1.0
 
-
-# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/1227/20231227.h5"
-# imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/VOC2007/JPEGImages/"
-# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback/output/20230810/good_detection_test_callback_2.h5"
-# imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/good/VOCdevkit/VOC2007/JPEGImages/"
-# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/20240228/hand_detection_20240626_01.h5"
-h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand/output/1227/20240708_command.h5"
-imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/hand/VOCdevkit/VOC2007/JPEGImages/"
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen.h5"
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen_2_another_init.h5"
+# h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen_3_another_init.h5"
+h5_model_path = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen_5_ssd_init.h5"
+imgs_path = "/home/zhangyouan/桌面/zya/dataset/681/PC_Screen_D/VOCdevkit/VOC2007/JPEGImages/"
 
 
 # 设置转换项： 配置转换选项，包括输入数据的数据类型(例如float32和uint8)和优化选项。在这里，需要将激活和权重量化为int8
@@ -52,6 +49,6 @@ converter.representative_dataset = representative_data_gen
 # 2. 将模型转换为TFLite模型，执行转换操作，并将量化的TFLite模型保存为文件；
 tflite_model = converter.convert()
 #    保存为TFLite文件
-with open('quantized_hand_model_20240708.tflite', 'wb') as f:
+with open('20240810_pc_screen_5_ssd_init.tflite', 'wb') as f:
     f.write(tflite_model)
-    print("has been written to: quantized_hand_model_20240708.tflite")
+    print("has been written to: 20240810_pc_screen_5_ssd_init.tflite")
