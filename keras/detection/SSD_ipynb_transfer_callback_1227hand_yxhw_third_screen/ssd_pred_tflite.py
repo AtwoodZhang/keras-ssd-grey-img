@@ -113,7 +113,8 @@ class SSD(object):
         image_data = np.expand_dims(np.array(image_data, dtype='float32'), 0)
         image_data = np.expand_dims(np.array(image_data, dtype='float32'), -1)
         image_data = image_data / 127.5 - 1.0
-        image_data_int8 = np.round(image_data*127).astype(np.int8)
+        # image_data_int8 = np.round(image_data*127).astype(np.int8)
+        image_data_int8 = np.round(image_data*127).astype(np.float32)
 
         preds = self.ssd.predict(image_data)
         
@@ -123,7 +124,8 @@ class SSD(object):
         # tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen_3_another_init.tflite"
         # tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen_5_ssd_init.tflite"
         # tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/20240810_pc_screen_3_another_init_qat.tflite"
-        tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/20240810_pc_screen_5_another_init_qat.tflite"
+        # tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/20240810_pc_screen_5_another_init_qat.tflite"
+        tflite_model = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen_681_qat_norm_de_aug_20240822.tflite"
         interpreter = tf.lite.Interpreter(model_path = tflite_model)
         interpreter.allocate_tensors()
         input_details = interpreter.get_input_details()  # 设置网络输入
@@ -131,11 +133,16 @@ class SSD(object):
         
         interpreter.set_tensor(input_details[0]['index'], image_data_int8)  # 将数据输入到网络中
         interpreter.invoke()  # 运行推理
-        output_data = interpreter.get_tensor(output_details[0]['index'])
+        if len(output_details) == 1:
+            output_data = interpreter.get_tensor(output_details[0]['index'])
+        elif len(output_details) == 2:
+            output_data1 = interpreter.get_tensor(output_details[0]['index'])
+            output_data2 = interpreter.get_tensor(output_details[1]['index'])
+            output_data = np.concatenate((output_data2, output_data1), axis=-1)
         # output_data = 0.0879112109541893*(output_data-1)
-        output_scale = output_details[0]['quantization_parameters']['scales'][0]
-        output_zero_point = output_details[0]['quantization_parameters']['zero_points'][0]
-        output_data = output_scale*(output_data - output_zero_point)
+        # output_scale = output_details[0]['quantization_parameters']['scales'][0]
+        # output_zero_point = output_details[0]['quantization_parameters']['zero_points'][0]
+        # output_data = output_scale*(output_data - output_zero_point)
         # output_data = 0.09758596867322922 * output_data
         #-----------------------------------------------------------#
         #   将预测结果进行解码

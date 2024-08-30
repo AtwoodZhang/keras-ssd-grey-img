@@ -10,18 +10,21 @@ import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
 from Models import Sample_model
 from Models import model_version1
+from Models_verison2 import model_version2
 
 
 def cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/", 
-                    epoch=100, 
-                    save_model_name = 'class_08_test_model_2_less.h5',
+                    epoch=300, 
+                    save_model_name = 'cls_model_0821.h5',
                     model_summary="True",
                     weights = None,
-                    model_load = 2):
+                    model_load = 3):
     if model_load == 1:
         model = model_version1()
     elif model_load == 2:
         model = Sample_model(model_summary=model_summary)
+    elif model_load == 3:
+        model = model_version2()
         
     if weights is not None:
         model.load_weights(weights)
@@ -65,10 +68,14 @@ def cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/Rock
     )
     
     #======== 模型参数编译 =========
-    from keras import optimizers
-    sgd = optimizers.SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+    from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
+    from tensorflow.keras.optimizers import Adam
+    # 使用 ReduceLROnPlateau 回调函数
+    adam = Adam(lr=0.01)
+    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=10, min_lr=1e-6)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=30, restore_best_weights=True)
     model.compile(
-        optimizer = sgd,
+        optimizer = adam,
         loss = 'binary_crossentropy',
         metrics = ['accuracy']
     )
@@ -84,6 +91,7 @@ def cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/Rock
         training_generator,
         epochs = epoch,
         validation_data = validation_generator,
+        callbacks=[reduce_lr, early_stopping]
     )
 
     model.save(save_model_name) # model 保存
@@ -95,6 +103,6 @@ def cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/Rock
 if __name__ == "__main__":
     from log_visualization_tool import visual_train
     history = cls_model_build(data_path=r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/", 
-                            epoch=100, 
-                            save_model_name = './../../output/keras/cls/model_v0_m1.h5' )
+                              epoch=300, 
+                              save_model_name = './../../output/keras/cls/model_0821_retrain.h5' )
     visual_train(history)

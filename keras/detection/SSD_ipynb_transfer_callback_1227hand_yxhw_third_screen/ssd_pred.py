@@ -14,8 +14,8 @@ from utils_bbox import BBoxUtility
 
 class SSD(object):
     _defaults = {
-        "model_path": "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen_2/20240810_pc_screen_4_another_init.h5", 
-        # "model_path" : "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen/20240810_pc_screen.h5",
+        # "model_path": "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen_2/20240810_pc_screen_4_another_init.h5", 
+        "model_path" : "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen/20240810_pc_screen.h5",
         # "model_path" : "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/Quantization/20240810_pc_screen.h5",
         "classes_path"      : '/home/zhangyouan/桌面/zya/dataset/681/PC_Screen_D/voc_classes.txt',
         "input_shape"       : [120, 160],
