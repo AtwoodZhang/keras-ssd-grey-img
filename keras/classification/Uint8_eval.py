@@ -9,10 +9,11 @@ print("Tensorflow version:", tf.__version__)
 
 
 # 1. 制作量化数据集
-path = r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/train/"
+path = r"/home/zhangyouan/桌面/zya/dataset/681/PCScreen_Book_PhoneScreen/train/"
 list_dir = os.listdir(path)
 
-labels = {"paper":0, "rock":1, "scissors":2}
+# labels = {"paper":0, "rock":1, "scissors":2}
+labels = {'PcScreen': 0, 'PhoneScreen': 1, 'book': 2}
 
 test_images = []
 test_images_link = []
@@ -59,9 +60,10 @@ def run_tflite_model(tflite_file, test_image_indices):
 
     # Check if the input type is quantized, then rescale input data to uint8
     # if input_details['dtype'] == np.uint8:
-    #   input_scale, input_zero_point = input_details["quantization"]
-    #   test_image = test_image / input_scale + input_zero_point
-    test_image = test_image.astype(np.uint8)
+    if input_details['dtype'] == np.int8:
+      input_scale, input_zero_point = input_details["quantization"]
+      test_image = test_image / input_scale + input_zero_point
+    # test_image = test_image.astype(np.uint8)
 
     test_image = np.expand_dims(test_image, axis=0).astype(input_details["dtype"])
     interpreter.set_tensor(input_details["index"], test_image)
@@ -74,7 +76,7 @@ def run_tflite_model(tflite_file, test_image_indices):
 
 
 test_image_index = random.randint(1, 100)
-tflite_model_quant_file = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/class_08_test_model_2_less.tflite"
+tflite_model_quant_file = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/trained_model/pc_book_phone_0904_allint8.tflite"
 
 def evaluate_model(tflite_file, model_type):
   test_image_indices = range(test_images.shape[0])

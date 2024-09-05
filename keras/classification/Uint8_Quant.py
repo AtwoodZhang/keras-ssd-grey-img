@@ -9,10 +9,10 @@ print("Tensorflow version:", tf.__version__)
 
 
 # 1. 制作量化数据集
-path = r"/home/zhangyouan/桌面/zya/dataset/681/srp/RockSecissorsPaper_enlarge/train/"
+path = r"/home/zhangyouan/桌面/zya/dataset/681/PCScreen_Book_PhoneScreen/train/"
 list_dir = os.listdir(path)
 
-labels = {"paper":0, "rock":1, "scissors":2}
+labels = {"book":0, "PcScreen":1, "PhoneScreen":2}
 
 test_images = []
 test_images_link = []
@@ -43,7 +43,7 @@ print("after norm: ", np.max(test_images[0]), np.min(test_images[0]))  # 判断0
 
 
 # 2. uint8量化
-h5_model = tf.keras.models.load_model(r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/class_08_test_model_2_less.h5")
+h5_model = tf.keras.models.load_model(r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/trained_model/pc_book_phone_0904.h5")
 
 def representative_data_gen():
     for input_value in tf.data.Dataset.from_tensor_slices(test_images).batch(1).take(90):
@@ -57,6 +57,6 @@ converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
 converter.inference_input_type = tf.uint8
 converter.inference_output_type = tf.uint8
 tflite_model_quant = converter.convert()
-tflite_name = r"./class_08_test_model_2_less.tflite"
+tflite_name = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/trained_model/pc_book_phone_0904_partint8.tflite"
 with open(tflite_name, 'wb') as f:
     f.write(tflite_model_quant)
