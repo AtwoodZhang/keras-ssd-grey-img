@@ -37,14 +37,14 @@ if __name__ == "__main__":
     momentum = 0.937
     batch_size = 32
     imgcolor = 'grey'  # imgcolor选“rgb” or “grey”, 则处理图像变单通道或者三通道
-    save_dir = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/pc_screen_2"
+    save_dir = "/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/detection/SSD_ipynb_transfer_callback_1227hand_yxhw_third_screen/output/PhoneScreen"
     
     # 设置SSD参数
-    cls_name_path = r"/home/zhangyouan/桌面/zya/dataset/681/PC_Screen_D/voc_classes.txt"  # 导入目标检测类别；
+    cls_name_path = r"/home/zhangyouan/桌面/zya/dataset/681/PhoneScreen/voc_classes.txt"  # 导入目标检测类别；
     input_shape = [120, 160]  # 输入的尺寸大小
     anchor_size = [32, 59, 86, 113, 141, 168]  # 用于设定先验框的大小，根据公式计算而来；如果要检测小物体，修改浅层先验框的大小，越小的话，识别的物体越小；    
-    train_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/PC_Screen_D/000_pre_process_code/2007_train.txt'  # 训练图片路径和标签
-    val_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/PC_Screen_D/000_pre_process_code/2007_val.txt'  # 验证图片路径和标签
+    train_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/PhoneScreen/2007_trainval.txt'  # 训练图片路径和标签
+    val_annotation_path = r'/home/zhangyouan/桌面/zya/dataset/681/PhoneScreen/2007_test.txt'  # 验证图片路径和标签
     
     # 1. 获取classes和anchor
     class_names, num_cls = get_classes(cls_name_path)
@@ -136,5 +136,5 @@ if __name__ == "__main__":
     )  # 使用tensorboard --logdir="" 调用查看loss
     
     record_log(history, filename = os.path.join(save_dir, "unetlogs/log.txt"))
-    model.save(os.path.join(save_dir, "20240810_pc_screen_5_ssd_init.h5"))
-    model.save(os.path.join(save_dir, "20240810_pc_screen_5_ssd_init.pb"))
+    model.save(os.path.join(save_dir, "20240910_PhoneScreen_ssd_init.h5"))
+    model.save(os.path.join(save_dir, "20240910_PhoneScreen_ssd_init.pb"))

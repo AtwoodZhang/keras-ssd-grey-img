@@ -53,10 +53,11 @@ converter = tf.lite.TFLiteConverter.from_keras_model(h5_model)
 converter.optimizations = [tf.lite.Optimize.DEFAULT]  # 使用默认的optimizations标记来量化所有固定参数（例如权重）
 converter.representative_dataset = representative_data_gen # 使用浮点回退量化进行转换，转换器可以通过该函数估算所有可变数据的动态范围
 
-converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
-converter.inference_input_type = tf.uint8
-converter.inference_output_type = tf.uint8
+converter.target_spec.supported_ops = [tf.int8]
+# converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
+# converter.inference_input_type = tf.int8
+# converter.inference_output_type = tf.int8
 tflite_model_quant = converter.convert()
-tflite_name = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/trained_model/pc_book_phone_0904_partint8.tflite"
+tflite_name = r"/home/zhangyouan/桌面/zya/NN_net/network/SSD/IMX_681_ssd_mobilenet_git/keras/classification/trained_model/pc_book_phone_0904_float32int8.tflite"
 with open(tflite_name, 'wb') as f:
     f.write(tflite_model_quant)

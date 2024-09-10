@@ -54,6 +54,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 60 * 80 * 8
     x = Conv2D(8, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer3')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -66,6 +67,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 30 * 40 * 8  
     x = Conv2D(8, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer5')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -79,6 +81,7 @@ def mobilenet(inputs_tensor):
     # Conv_Depth_Conv_Depth_Conv
     # --> 30 * 40 * 16
     x = Conv2D(16, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer6')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -91,6 +94,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 30 * 40 * 16
     x = Conv2D(16, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer8')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -103,6 +107,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 15 * 20 * 24 
     x = Conv2D(24, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer10')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -115,6 +120,7 @@ def mobilenet(inputs_tensor):
 
     # --> 15 * 20 * 48
     x = Conv2D(48, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer11')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -128,6 +134,7 @@ def mobilenet(inputs_tensor):
     # --> 15 * 20 * 64
     x = Conv2D(64, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer13', kernel_regularizer='l2')(x)
     # x = Conv2D(64, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer13')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -144,6 +151,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 8 * 10 * 40
     x = Conv2D(40, (1, 1), padding='same', use_bias=True, strides=(2, 2), name='Conv2D_layer15')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -153,6 +161,7 @@ def mobilenet(inputs_tensor):
     x = _depthwise_conv_block(x, 40, 1, block_id=8)  # --> 8 * 10 * 40
     # --> 8 * 10 * 80
     x = Conv2D(80, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer16')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -165,6 +174,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 8 * 10 * 80
     x = Conv2D(80, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer18')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -179,6 +189,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 4 * 5 * 80
     x = Conv2D(80, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer20')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -193,6 +204,7 @@ def mobilenet(inputs_tensor):
         x = tf.nn.relu(x)  # tf 1.13.2
     # --> 2 * 3 * 64
     x = Conv2D(64, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer22')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
@@ -206,6 +218,7 @@ def mobilenet(inputs_tensor):
     except:
         x = tf.nn.relu(x)  # tf 1.13.2
     x = Conv2D(64, (1, 1), padding='same', use_bias=True, strides=(1, 1), name='Conv2D_layer24')(x)
+    x = tf.keras.layers.BatchNormalization()(x)
     try:
         x = KL.ReLU(max_value=6.)(x)
     except:
